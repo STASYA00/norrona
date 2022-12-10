@@ -1,0 +1,25 @@
+{
+
+	"TotalMatching": 165,
+	"Products": {
+		"Product1": {"Name": "p1", "price": 123},
+		"Product2": {"Name": "p2", "price": 243}
+	},
+  "CurrentContent": {
+    "Subtitle": null,
+    "Ingress": null,
+    "DisplayName": "Outlet dam",
+    "Outlet": true,
+    "Archive": false,
+    "DisableProductGroups": true,
+    "EnableColorSplitting": false,
+    "ContentPageLink": null,
+    "Gender": "Female",
+    "Content": null,
+    "DefaultSort": 1,
+    "QuickFilterCategory": "displaysize",
+    "FilterSectionOpen": "Default"
+  }
+
+
+}
