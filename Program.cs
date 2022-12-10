@@ -1,13 +1,31 @@
-﻿using System.Text.Json;
-using System.Text.Json.Nodes;
-using System.Xml.Serialization;
+﻿using System.Net;
+using System.Text.Encodings.Web;
+using System.Text.Json;
 
-using norrona;
+using Norrona;
 
-string assetsPath = "./../../../assets/";
-string jsonname = "norrona.json";
+var config = new Config();
+config.IsDebug = true;
 
-var f = File.ReadAllText(String.Format("{0}{1}", assetsPath, jsonname));
+var f = "";
+var html = "";
+
+
+if (config.IsDebug == false)
+{
+    using (WebClient wc = new WebClient())
+    {
+        f = wc.DownloadString(constants.JSONURL);
+    }
+    HttpClient client = new HttpClient();
+    html = await client.GetStringAsync(constants.NORRONAURL);
+}
+else
+{
+    f = File.ReadAllText(String.Format("{0}{1}", constants.ASSETPATH, constants.JSONFILE));
+    html = File.ReadAllText(String.Format("{0}{1}", constants.ASSETPATH, constants.HTMLFILE));
+    var t = 0;
+}
 
 var result = JsonSerializer.Deserialize<NorronaJson>(f);
 
@@ -22,25 +40,25 @@ var res = result.Products
         .ToLower()
         .Equals("lofoten"))
         .ToList()
-        .Count()
-        ;
+        .Count();
+
 Console.WriteLine(res);
 
 //Products.OutletVariants.SizeVariations.Inventory
 
-List<string> chosenConcepts = new List<string>() { "lofoten" };
+List<string> chosenConcepts = result.Products.Select(x => x.Concept).Distinct().ToList();
 List<string> chosenSizes=new List<string>() { "m" };
 List<string> chosenColors=new List<string>() { "red" };
 List<string> chosenCategories=new List<string>() { "jackets" };
 int Discount = 30;
-int ProductQuantity = 2;
+int ProductQuantity = 0;
 
 var super_x = result.Products
     .Where(x => (chosenConcepts.Contains(x.Concept.ToLower()) &&
                 (chosenCategories.Contains(x.Category.ToLower())) &&
                 (x.OutletVariants.Select(x => (chosenColors.Contains(x.BaseColor.ToLower())) &&
                                             (x.Price.DiscountPercentage > Discount) &&
-                                            (x.SizeVariations.Select(x => (x.Inventory > ProductQuantity) &&
+                                            (x.SizeVariations.Select(x => (x.Inventory == ProductQuantity) &&
                                                                         (chosenSizes.Contains(x.Size.ToLower()))
                                                                         ).Count() > 0)
                                             ).Count() > 0)));
@@ -51,3 +69,4 @@ var a = 3;
 //    .Select(x => x.Value)
 //    .ToList()
 //    .ForEach(x => Console.WriteLine(x));
+
