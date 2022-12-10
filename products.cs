@@ -25,6 +25,7 @@ namespace norrona
         public bool Outlet { get; set; }
         public string Gender { get; set; }
     }
+
     public class Product
     {
         public Product() { }
@@ -41,20 +42,22 @@ namespace norrona
                                  OutletVariants.Aggregate("", (acc, next)=>acc + next.ToString()));
         }
     }
+
     public class ProductVariant
     {
         public ProductVariant() { }
         public string BaseColor { get; set; }
         public string ColorName { get; set; }
 
-        public String ColorCode { get; set; }
+        public string ColorCode { get; set; }
 
         public List<ProductSize> SizeVariations { get; set; }
 
         public Price Price { get; set; }
         override public string ToString()
         {
-            return String.Format("{0}\tAMOUNT: {1}\n", ColorName, SizeVariations.Where(x=>x.Inventory>0).Aggregate("", (acc, next)=>acc + next.ToString()));
+            return String.Format("{0}\tAMOUNT: {1}\n", ColorName, 
+                                SizeVariations.Where(x=>x.Inventory>0).Aggregate("", (acc, next)=>acc + next.ToString()));
         }
     }
 
