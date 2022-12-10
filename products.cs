@@ -37,7 +37,8 @@ namespace norrona
 
         override public string ToString()
         {
-            return String.Format("{0}", Name);
+            return String.Format("{0, 5}:\t{1}\t{2}\n***\n", Category.ToUpper(), Name, 
+                                 OutletVariants.Aggregate("", (acc, next)=>acc + next.ToString()));
         }
     }
     public class ProductVariant
@@ -50,9 +51,10 @@ namespace norrona
 
         public List<ProductSize> SizeVariations { get; set; }
 
+        public Price Price { get; set; }
         override public string ToString()
         {
-            return String.Format("\t{0}", ColorName);
+            return String.Format("{0}\tAMOUNT: {1}\n", ColorName, SizeVariations.Where(x=>x.Inventory>0).Aggregate("", (acc, next)=>acc + next.ToString()));
         }
     }
 
@@ -60,12 +62,26 @@ namespace norrona
     {
         public ProductSize() { }
         public string Size { get; set; }
-        public string Inventory { get; set; }
+        public int Inventory { get; set; }
 
         override public string ToString()
         {
-            return String.Format("\t{0}", Size);
+            return String.Format("{0}: {1} ", Size, Inventory);
         }
+    }
+
+    public class Price
+    {
+        public Price() { }
+        public double VariantAmount { get; set; }
+        public string CurrencyCode { get; set; }
+        public double FullPrice { get; set; }
+        public int DiscountPercentage { get; set; }
+        override public string ToString()
+        {
+            return String.Format("{0:F2} {1}", VariantAmount, CurrencyCode);
+        }
+
     }
 
 }

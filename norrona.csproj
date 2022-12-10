@@ -7,6 +7,6 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ProjectExtensions><VisualStudio><UserProperties assets_4norrona_1json__JsonSchema="https://carafe.fm/schema/draft-02/bundle.schema.json" /></VisualStudio></ProjectExtensions>
+  <ProjectExtensions><VisualStudio><UserProperties assets_4norrona_1json__JsonSchema="https://carafe.fm/schema/draft-02/bundle.schema.json" assets_4norrona_3full_1json__JsonSchema="https://beaujs.com/schema.json" /></VisualStudio></ProjectExtensions>
 
 </Project>
