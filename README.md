@@ -41,9 +41,11 @@
 
     Work in progress
 
-    <a href="https://github.com/othneildrew/norrona/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/othneildrew/norrona/issues">Request Feature</a>
+    <div>
+        <a href="https://github.com/othneildrew/norrona/issues">Report Bug</a>
+        ·
+        <a href="https://github.com/othneildrew/norrona/issues">Request Feature</a>
+    </div>
   </p>
 </div>
 
