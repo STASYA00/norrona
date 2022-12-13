@@ -1,4 +1,3 @@
-<!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/norrona/pull/73 -->
 <a name="readme-top"></a>
 <!--
 *** Thanks for checking out the norrona. If you have a suggestion
@@ -30,22 +29,23 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/othneildrew/norrona">
+  <a href="https://github.com/othneildrew/Best-README-Template">
     <img src="assets/norrona.svg" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">norrona</h3>
 
   <p align="center">
-    Tool to monitor the Norrona online outlet. 
-
-    Work in progress
-
+    Tool to monitor the Norrona online outlet. Work in progress
     <br />
-        <a href="https://github.com/othneildrew/norrona/issues">Report Bug</a>
-        ·
-        <a href="https://github.com/othneildrew/norrona/issues">Request Feature</a>
-    
+    <a href="https://github.com/STASYA00/norrona"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/STASYA00/norrona">View Demo</a>
+    ·
+    <a href="https://github.com/STASYA00/norrona/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/STASYA00/norrona/issues">Request Feature</a>
   </p>
 </div>
 
@@ -198,7 +198,7 @@ Project Link: [https://github.com/STASYA00/norrona](https://github.com/STASYA00/
 ## Acknowledgments
 
 
-* [norrona](https://github.com/othneildrew/norrona)
+* [norrona](https://github.com/STASYA00/norrona)
 * [Best-README-Template](https://github.com/othneildrew/Best-README-Template)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -207,7 +207,7 @@ Project Link: [https://github.com/STASYA00/norrona](https://github.com/STASYA00/
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/norrona.svg?style=for-the-badge
+[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
 [contributors-url]: https://github.com/othneildrew/norrona/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/othneildrew/norrona.svg?style=for-the-badge
 [forks-url]: https://github.com/othneildrew/norrona/network/members
