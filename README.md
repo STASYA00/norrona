@@ -41,11 +41,11 @@
 
     Work in progress
 
-    <div>
+    <br />
         <a href="https://github.com/othneildrew/norrona/issues">Report Bug</a>
         ·
         <a href="https://github.com/othneildrew/norrona/issues">Request Feature</a>
-    </div>
+    
   </p>
 </div>
 
