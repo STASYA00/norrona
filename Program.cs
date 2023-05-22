@@ -23,17 +23,16 @@ if (config.IsDebug == false)
 else
 {
     f = File.ReadAllText(String.Format("{0}{1}", constants.ASSETPATH, constants.JSONFILE));
-    html = File.ReadAllText(String.Format("{0}{1}", constants.ASSETPATH, constants.HTMLFILE));
-    var t = 0;
+    //html = File.ReadAllText(String.Format("{0}{1}", constants.ASSETPATH, constants.HTMLFILE));
 }
 
 var result = JsonSerializer.Deserialize<NorronaJson>(f);
 
-Console.WriteLine(result.CurrentContent.DisplayName);
-result.Products.ForEach(p =>  {
-    Console.WriteLine(p.ToString());
-    p.OutletVariants.ForEach(x => Console.WriteLine(x.ToString()));
-} );
+//Console.WriteLine(result.CurrentContent.DisplayName);
+//result.Products.ForEach(p =>  {
+//    Console.WriteLine(p.ToString());
+//    p.OutletVariants.ForEach(x => Console.WriteLine(x.ToString()));
+//} );
 
 var res = result.Products
     .Where(x => x.Concept
@@ -42,11 +41,11 @@ var res = result.Products
         .ToList()
         .Count();
 
-Console.WriteLine(res);
+//Console.WriteLine(res);
 
 //Products.OutletVariants.SizeVariations.Inventory
 
-List<string> chosenConcepts = result.Products.Select(x => x.Concept).Distinct().ToList();
+List<string> chosenConcepts = new List<string>() { "lofoten" }; // result.Products.Select(x => x.Concept).Distinct().ToList();
 List<string> chosenSizes=new List<string>() { "m" };
 List<string> chosenColors=new List<string>() { "red" };
 List<string> chosenCategories=new List<string>() { "jackets" };
